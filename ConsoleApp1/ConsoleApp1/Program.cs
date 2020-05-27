@@ -18,12 +18,19 @@ namespace ConsoleApp1
                        "thirteen ", "fourteen ", "fifteen ",
                        "sixteen ", "seventeen ", "eighteen ",
                        "nineteen "};
+        //left first 2 empty in array, for handling values
+        static string[] secondDigits = {"", "", "twenty ", "thirty ", "forty ",
+                       "fifty ", "sixty ", "seventy ", "eighty ",
+                       "ninety "};
+
 
         static string ConvertToString(int inputParam)
         {
             string outputString = "";
 
-            outputString = ConvertFunToString((int)(inputParam % 100));
+            outputString += ConvertFunToString((int)((inputParam/100)% 10));
+
+            outputString += ConvertFunToString((int)(inputParam % 100));
 
             return outputString;
         }
@@ -32,7 +39,16 @@ namespace ConsoleApp1
         {
             string finalString = "";
 
-            finalString += firstDigits[v];
+            if (v > 19)
+            {
+                finalString += secondDigits[v / 10] + firstDigits[v % 10];
+                finalString += "Hundred";
+            }
+
+            else
+            {
+                finalString += firstDigits[v];
+            }
 
             return finalString;
         }
