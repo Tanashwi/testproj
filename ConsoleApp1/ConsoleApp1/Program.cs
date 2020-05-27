@@ -28,6 +28,10 @@ namespace ConsoleApp1
         {
             string outputString = "";
 
+
+
+            outputString += ConvertFunToString((int)((inputParam / 1000) % 100), "Thousand ");
+
             outputString += ConvertFunToString((int)((inputParam / 100) % 10), "Hundred ");
 
             outputString += ConvertFunToString((int)(inputParam % 100), "");
