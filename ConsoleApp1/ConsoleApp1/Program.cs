@@ -5,7 +5,7 @@ namespace ConsoleApp1
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Enter numeric value less than or equal to 99,999 only. No alphabets.");
             var inputField = Console.ReadLine();

@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1.Classes
 {
-    class ConvertingLogic
+    public class ConvertingLogic
     {
         public static string ConvertToString(int inputParam)
         {
