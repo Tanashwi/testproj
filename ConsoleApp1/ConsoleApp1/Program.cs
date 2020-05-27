@@ -28,26 +28,30 @@ namespace ConsoleApp1
         {
             string outputString = "";
 
-            outputString += ConvertFunToString((int)((inputParam/100)% 10));
+            outputString += ConvertFunToString((int)((inputParam / 100) % 10), "Hundred ");
 
-            outputString += ConvertFunToString((int)(inputParam % 100));
+            outputString += ConvertFunToString((int)(inputParam % 100), "");
 
             return outputString;
         }
 
-        private static string ConvertFunToString(int v)
+        private static string ConvertFunToString(int v, string positionValue)
         {
             string finalString = "";
 
             if (v > 19)
             {
                 finalString += secondDigits[v / 10] + firstDigits[v % 10];
-                finalString += "Hundred";
-            }
 
+            }
             else
             {
                 finalString += firstDigits[v];
+            }
+
+            if (v != 0)
+            {
+                finalString += positionValue;
             }
 
             return finalString;
